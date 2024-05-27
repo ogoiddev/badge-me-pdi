@@ -4,26 +4,40 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-color: 191, 215, 255, 1;
+  --background-start-rgb: 232, 251, 255, 1;
+  --background-middle-rgb: 189, 206, 255, 1;
+  --background-end-rgb: 191, 215, 255, 1;
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-color: 13, 4, 42, 1;
+    --background-start-rgb: 17, 35, 69, 1;
+    --background-middle-rgb: 41, 24, 69, 1;
+    --background-end-rgb: 13, 4, 42, 1;
+    --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1),
+      0px 1px 3px rgba(0, 0, 0, 0.08);
   }
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   color: rgb(var(--foreground-rgb));
+  background: rgb(--background-end-rgb);
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    0deg,
+    rgba(var(--background-start-rgb)) 0%,
+    rgba(var(--background-middle-rgb)) 45%,
+    rgba(var(--background-end-rgb)) 100%
+  );
+
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
 }
 
 @layer utilities {
