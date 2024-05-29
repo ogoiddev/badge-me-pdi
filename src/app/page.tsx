@@ -1,9 +1,10 @@
+
 'use client';
+import { useAppGlobalOfflineHook } from "@/context";
 import dynamic from "next/dynamic";
-import { useAppContext } from "@/context";
 
 const HomePage = () => {
-  const context = useAppContext();
+  const context = useAppGlobalOfflineHook();
 
   console.log("🚀 ~ Context:", context);
 

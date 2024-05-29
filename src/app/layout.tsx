@@ -1,11 +1,11 @@
-import { AppProvider } from "@/context";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import HeaderDefaultHome from "./main_components/HeaderDefaultHome";
 import "./globals.css";
+import HeaderDefaultHome from "./main_components/HeaderDefaultHome";
+import { Providers } from "./providers";
 
 const roboto = Roboto({
-  weight: '400',
+  weight: '700',
   subsets: ['latin'],
   display: 'swap',
 })
@@ -27,10 +27,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={roboto.className}>
-        <AppProvider>
+        <Providers>
           <HeaderDefaultHome />
           <main className="flex flex-col flex-1">{children}</main>
-        </AppProvider>
+        </Providers>
       </body>
     </html>
   );

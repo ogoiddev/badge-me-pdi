@@ -1,8 +1,8 @@
-import { useAppContext } from "@/context";
+import { useAppGlobalOfflineHook } from "@/context/appGlobalOfflineContext";
 import { FC } from "react";
 
 const InputForEmail: FC = () => {
-  const { userInfo, setUserInfo } = useAppContext();
+  const { userInfo, setUserInfo } = useAppGlobalOfflineHook();
 
   return (
     <input
