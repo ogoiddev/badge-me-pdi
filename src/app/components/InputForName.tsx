@@ -1,18 +1,18 @@
-import { useAppGlobalOfflineHook } from "@/context/appGlobalOfflineContext";
+"use client";
+import { useAppGlobalOfflineHook } from "@/context";
 import { FC } from "react";
 
 const InputForName: FC = () => {
-  const { userInfo, setUserInfo } = useAppGlobalOfflineHook();
+  const { userInfo, handleSetUserInfo } = useAppGlobalOfflineHook();
 
   return (
     <input
+      id="name"
       className="border-none bg-transparent color- outline-none"
       type="text"
       value={userInfo?.name}
       maxLength={30}
-      onChange={({ target }) =>
-        setUserInfo({ ...userInfo, name: target.value })
-      }
+      onChange={({ target }) => handleSetUserInfo({ name: target.value })}
       placeholder="Enter your name"
     />
   );

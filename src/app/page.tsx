@@ -1,16 +1,12 @@
+import { FC } from "react";
+import HomePage from "./pages/home/page";
 
-'use client';
-import { useAppGlobalOfflineHook } from "@/context";
-import dynamic from "next/dynamic";
-
-const HomePage = () => {
-  const context = useAppGlobalOfflineHook();
-
-  console.log("🚀 ~ Context:", context);
-
-  const LayoutComponent = dynamic(() => import(`./badge-layouts/pages/${context.layout}/page`));
-
-  return <LayoutComponent />;
+const Page: FC = () => {
+  return (
+    <main>
+      <HomePage />;
+    </main>
+  );
 };
 
-export default HomePage;
+export default Page;
