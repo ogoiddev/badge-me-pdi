@@ -33,3 +33,43 @@ input::before {
     text-wrap: balance;
   }
 }
+
+/* Estilo global para botões */
+a {
+  position: relative;
+  overflow: hidden;
+  background-color: #4CAF50; /* Cor de fundo do botão */
+  color: white;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+/* Estilo do pseudo-elemento antes da animação */
+a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo da animação */
+  transition: width 0.4s ease;
+  z-index: 0;
+}
+
+/* Mudança de cor do texto ao hover */
+a:hover {
+  color: #4CAF50;
+}
+
+/* Estilo do pseudo-elemento durante a animação */
+a:hover::before {
+  width: 100%;
+}
+
+/* Para garantir que o texto esteja acima da animação */
+a span {
+  position: relative;
+  z-index: 1;
+}
+

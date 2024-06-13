@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={roboto.className}>
         <Providers>
           <HeaderDefaultHome />
-          <main className="flex flex-col flex-1">{children}</main>
+          <main className="flex flex-col flex-1 items-center transition-all py-8">{children}</main>
         </Providers>
       </body>
     </html>

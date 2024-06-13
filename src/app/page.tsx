@@ -3,7 +3,7 @@ import HomePage from "./pages/home/page";
 
 const Page: FC = () => {
   return (
-    <main >
+    <main>
       <HomePage />;
     </main>
   );
