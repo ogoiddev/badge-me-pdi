@@ -1,5 +1,5 @@
 "use client";
-import { useAppGlobalOfflineHook } from "@/context";
+import { useBadgeInfo } from "@/context";
 import Image from "next/image";
 import { FC, useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -10,7 +10,7 @@ interface AvatarProps {
 
 const Avatar: FC<AvatarProps> = ({ avatar }) => {
   const { setFileAvatar, previewAvatar, setPreviewAvatar } =
-    useAppGlobalOfflineHook();
+    useBadgeInfo();
 
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {

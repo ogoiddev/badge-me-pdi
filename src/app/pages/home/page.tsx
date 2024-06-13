@@ -1,11 +1,11 @@
 'use client'
-import { useAppGlobalOfflineHook } from "@/context";
+import { useBadgeInfo } from "@/context";
 import { redirect, useRouter } from "next/navigation";
 import { FC } from "react";
 
 
 const HomePage: FC = () => {
-  const { layout } = useAppGlobalOfflineHook();
+  const { layout } = useBadgeInfo();
 
   const route = `/pages/${layout}`;
   redirect(route);

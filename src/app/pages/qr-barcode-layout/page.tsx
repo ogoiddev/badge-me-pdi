@@ -1,5 +1,5 @@
 "use client";
-import { useAppGlobalOfflineHook } from "@/context";
+import { useBadgeInfo } from "@/context";
 import Image from "next/image";
 import { FC } from "react";
 import InputForName from "../../components/InputForName";
@@ -11,7 +11,7 @@ const logoCracha = "/images/logo-cracha.png";
 const barcode = "/images/barcode.png";
 
 const QrBarcodeLayout: FC = () => {
-  const { userInfo } = useAppGlobalOfflineHook();
+  const { userInfo } = useBadgeInfo();
 
   return (
     <div className="flex flex-col flex-1 items-center transition-all">

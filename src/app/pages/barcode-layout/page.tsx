@@ -1,25 +1,22 @@
 "use client";
-import { useAppGlobalOfflineHook } from "@/context";
 import Image from "next/image";
-import { FC, useCallback, useState } from "react";
-import { useDropzone } from "react-dropzone";
-import InputForName from "../../components/InputForName";
-import InputForEmail from "../../components/InputForEmail";
+import { FC } from "react";
 import Avatar from "../../components/Avatar";
+import InputForEmail from "../../components/InputForEmail";
+import InputForName from "../../components/InputForName";
 
 const avatarGirl = "/images/avatar-girl.jpg";
 const logoCracha = "/images/logo-cracha.png";
 const barcode = "/images/barcode.png";
 
 const BarcodeLayout: FC = () => {
-  const { userInfo, handleSetUserInfo } = useAppGlobalOfflineHook();
 
   return (
     <div className="flex flex-col flex-1 items-center transition-all">
       <h2 className="w-full text-center m-10 text-xl">
         Modelo com Código de Barras
       </h2>
-      <section className="flex flex-col gap-8 items-center py-6 px-8 rounded-3xl w-[40vw] min-w-[320px] max-w-[488px] min-h-[424px] h-fit shadow-custom bg-custom">
+      <section className="flex flex-col gap-8 items-center py-6 px-8 rounded-3xl w-[40vw] min-w-[320px] max-w-[488px] min-h-[424px] h-fit shadow-custom bg-gray-900 dark:bg-gray-200">
         <Image
           src={logoCracha}
           alt="Avatar"

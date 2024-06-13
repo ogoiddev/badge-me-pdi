@@ -13,7 +13,7 @@ export interface IUserInfo {
   photo?: string;
 }
 
-interface IAppContext {
+interface IBadgeInfoContext {
   layout: string;
   setLayout: (layout: string) => void;
   userInfo: IUserInfo;
@@ -24,11 +24,11 @@ interface IAppContext {
   setPreviewAvatar: (preview: string | null) => void;
 }
 
-const AppGlobalOfflineContext = createContext<IAppContext | undefined>(
+const BadgeInfoContext = createContext<IBadgeInfoContext | undefined>(
   undefined
 );
 
-export const AppProvider = ({ children }: { children: ReactNode }) => {
+export const BadgeInfoProvider = ({ children }: { children: ReactNode }) => {
   const [layout, setLayout] = useState<string>("barcode-layout");
   const [userInfo, setUserInfo] = useState<IUserInfo>({ name: "", email: "" });
 
@@ -42,7 +42,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
   );
 
   return (
-    <AppGlobalOfflineContext.Provider
+    <BadgeInfoContext.Provider
       value={{
         layout,
         setLayout,
@@ -55,14 +55,14 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
       }}
     >
       {children}
-    </AppGlobalOfflineContext.Provider>
+    </BadgeInfoContext.Provider>
   );
 };
 
-export const useAppGlobalOfflineHook = () => {
-  const context = useContext(AppGlobalOfflineContext);
+export const useBadgeInfo = () => {
+  const context = useContext(BadgeInfoContext);
   if (!context) {
-    throw new Error("useAppContext must be used within an AppProvider");
+    throw new Error("useAppContext must be used within an BadgeInfoProvider");
   }
   return context;
 };

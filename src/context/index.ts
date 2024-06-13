@@ -1,1 +1,1 @@
-export * from './appGlobalOfflineContext'
+export * from './BadgeInfoContext'

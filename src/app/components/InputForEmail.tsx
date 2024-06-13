@@ -1,9 +1,9 @@
 "use client";
-import { useAppGlobalOfflineHook } from "@/context";
+import { useBadgeInfo } from "@/context";
 import { FC } from "react";
 
 const InputForEmail: FC = () => {
-  const { userInfo, handleSetUserInfo } = useAppGlobalOfflineHook();
+  const { userInfo, handleSetUserInfo } = useBadgeInfo();
 
   return (
     <input
