@@ -36,5 +36,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
+
 # badge-me-pdi
 Projeto para desenvolvimento de habilidades - Um site gerador de crachá! 
+
+https://badge-me-pdi.vercel.app/
