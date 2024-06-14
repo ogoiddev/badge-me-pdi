@@ -2,74 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
-body {
-  @apply bg-light-gradient dark:bg-dark-gradient;
-  @apply text-dark-text dark:text-light-text;
-  min-height: 100vh;
-  height: fit-content;
-  width: 100vw;
-}
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(var(--background-color)) inset;
-  box-shadow: 0 0 0px 1000px rgb(var(--background-color)) inset;
-}
-input::after,
-input::before {
-  display: none;
-}
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
   }
 }
 
-/* Estilo global para botões */
-a {
-  position: relative;
-  overflow: hidden;
-  background-color: #4CAF50; /* Cor de fundo do botão */
-  color: white;
-  cursor: pointer;
-  transition: color 0.4s;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
 }
-
-/* Estilo do pseudo-elemento antes da animação */
-a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.2); /* Cor de fundo da animação */
-  transition: width 0.4s ease;
-  z-index: 0;
-}
-
-/* Mudança de cor do texto ao hover */
-a:hover {
-  color: #4CAF50;
-}
-
-/* Estilo do pseudo-elemento durante a animação */
-a:hover::before {
-  width: 100%;
-}
-
-/* Para garantir que o texto esteja acima da animação */
-a span {
-  position: relative;
-  z-index: 1;
-}
-

@@ -5,10 +5,10 @@ import { Providers } from "@/providers";
 import HeaderDefaultHome from "./components/HeaderDefaultHome";
 
 const roboto = Roboto({
-  weight: '700',
-  subsets: ['latin'],
-  display: 'swap',
-})
+  weight: "700",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Badge_me",
@@ -27,10 +27,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={roboto.className}>
-        <Providers>
-          <HeaderDefaultHome />
-          <main className="flex flex-col flex-1 items-center transition-all py-8">{children}</main>
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
