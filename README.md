@@ -41,3 +41,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Projeto para desenvolvimento de habilidades - Um site gerador de crachá! 
 
 https://badge-me-pdi.vercel.app/
+
+# https://gradient.page/
+# https://ui.shadcn.com/
